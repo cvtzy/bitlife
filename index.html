@@ -1,0 +1,8 @@
+<!-- use this html to load all assets in a single file – should work in an iframe perfectly fine without proxying needed -->
+<!-- last update: nov 12, 2026 -->
+<!-- made and updated by @cvt.z on dc / @cvtzy on gh -->
+
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>BitLife</title><link rel="icon" href="https://cdn.jsdelivr.net/gh/cvtzy/bitlife/assets/splash.png"><style>*{box-sizing:border-box}html,body,#gameContainer,.webgl-content{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#333}body{position:absolute;inset:0}#gameContainer{position:absolute;inset:0}.webgl-content{position:relative}canvas{width:100%;height:100%;display:block}</style></head><body><div class="webgl-content"><div id="gameContainer"></div></div><script>const CDN="https://cdn.jsdelivr.net/gh/cvtzy/bitlife/assets/";const loadScript=src=>new Promise((resolve,reject)=>{const s=document.createElement("script");s.src=CDN+src;s.onload=resolve;s.onerror=()=>reject(Error("Failed to load "+src));document.head.appendChild(s)});(async()=>{try{await loadScript("TemplateData/UnityProgress.js");await loadScript("Build/UnityLoader.js");window.unityInstance=UnityLoader.instantiate("gameContainer",CDN+"Build/BitLife.json",{onProgress:UnityProgress})}catch(e){document.body.innerHTML="<pre style='color:white;padding:20px'>"+e.message+"</pre>";console.error(e)}})();</script></body></html>
+
+<!-- changelog: -->
+<!-- nov 12, 2026 : published using jsdeliver's free cdn to host loader content -->
